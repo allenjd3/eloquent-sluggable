@@ -363,7 +363,7 @@ class SlugService
     {
         $includeTrashed = $config['includeTrashed'];
 
-        $query = $this->model->newQuery()
+        $query = $this->model->newQueryWithoutRelationships()
             ->findSimilarSlugs($attribute, $config, $slug);
 
         // use the model scope to find similar slugs
